@@ -1,0 +1,73 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "paths": {
+    "/v1/applicants": {
+      "post": {
+        "summary": "Creates an applicant",
+        "tags": [
+          "Applicants"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "applicant",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "attributes": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "date_of_birth": {
+                          "type": "string"
+                        },
+                        "application_ref": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "applicant created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "type": "legal_aid_applicant",
+                  "attributes": {
+                    "name": "John Doe",
+                    "date_of_birth": "1991-12-01",
+                    "application_ref": "3450ee25-6f06-438b-97cb-3ad095802964"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
