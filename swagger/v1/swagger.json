@@ -65,7 +65,32 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "invalid date of birth",
+            "schema": {
+              "$ref": "#/definitions/error_response"
+            }
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "error_response": {
+      "type": "object",
+      "properties": {
+        "errors": {
+          "$ref": "#/definitions/errors_map"
+        }
+      }
+    },
+    "errors_map": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
         }
       }
     }

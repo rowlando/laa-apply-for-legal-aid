@@ -89,7 +89,23 @@ RSpec.describe 'Legal aid applications' do
         end.to change { Applicant.count }.by(1)
       end
 
-      context 'when the provided date of birth is invalid' do
+      response '400', 'invalid date of birth' do
+        schema '$ref' => '#/definitions/error_response'
+
+        let(:applicant) {
+          {
+            data: {
+              type: 'legal_aid_applicant',
+              attributes: {
+                name: 'John Doe',
+                date_of_birth: '11-12-01',
+                application_ref: application.application_ref
+              }
+            }
+          }
+        }
+        run_test!
+
         it 'returns an error' do
           body_invalid_date = {
             'data': {

@@ -19,7 +19,22 @@ RSpec.configure do |config|
         title: 'API V1',
         version: 'v1'
       },
-      paths: {}
+      paths: {},
+      definitions: {
+        error_response: {
+          type: 'object',
+          properties: {
+            errors: { '$ref' => '#/definitions/errors_map' }
+          }
+        },
+        errors_map: {
+          type: 'object',
+          additionalProperties: {
+            type: 'array',
+            items: { type: 'string' }
+          }
+        }
+      }
     }
   }
 
