@@ -1,6 +1,7 @@
 class StatementOfCase < ApplicationRecord
   belongs_to :legal_aid_application
   has_one_attached :original_file
+  has_one_attached :pdf_file
 
   MAX_FILE_SIZE = 50.megabytes
   ALLOWED_CONTENT_TYPES = %w[
