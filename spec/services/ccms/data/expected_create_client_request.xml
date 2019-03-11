@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soap:Envelope xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:ns2='http://legalservices.gov.uk/CCMS/ClientManagement/Client/1.0/ClientBIM' xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/' xmlns:ns1='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd' xmlns:ns3='http://legalservices.gov.uk/Enterprise/Common/1.0/Header' xmlns:ns4='http://legalservices.gov.uk/Enterprise/Common/1.0/Common' xmlns:ns5='http://legalservices.gov.uk/CCMS/ClientManagement/Client/1.0/ClientBIO'>
+  <soap:Header>
+    <ns1:Security>
+      <ns1:UsernameToken>
+        <ns1:Username>my_soap_client_username</ns1:Username>
+        <ns1:Password Type='http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText'>xxxxx</ns1:Password>
+      </ns1:UsernameToken>
+    </ns1:Security>
+  </soap:Header>
+  <soap:Body>
+    <ns2:ClientAddRQ>
+      <ns3:HeaderRQ>
+        <ns3:TransactionRequestID>20190101121530123456</ns3:TransactionRequestID>
+        <ns3:Language>ENG</ns3:Language>
+        <ns3:UserLoginID>my_login</ns3:UserLoginID>
+        <ns3:UserRole>my_role</ns3:UserRole>
+      </ns3:HeaderRQ>
+      <ns2:Client>
+        <ns4:Name>
+          <ns4:Surname>Hurlock</ns4:Surname>
+          <ns4:FirstName>lenovo</ns4:FirstName>
+        </ns4:Name>
+        <ns4:PersonalInformation>
+          <ns4:DateOfBirth>1969-01-01</ns4:DateOfBirth>
+          <ns4:Gender>FEMALE</ns4:Gender>
+          <ns4:MaritalStatus>U</ns4:MaritalStatus>
+          <ns4:VulnerableClient>false</ns4:VulnerableClient>
+          <ns4:HighProfileClient>false Hurlock</ns4:HighProfileClient>
+          <ns4:VexatiousLitigant>false</ns4:VexatiousLitigant>
+          <ns4:CountryOfOrigin>GBR</ns4:CountryOfOrigin>
+          <ns4:MentalCapacityInd>false</ns4:MentalCapacityInd>
+        </ns4:PersonalInformation>
+        <ns4:Contacts>
+          <ns4:Password>Testing</ns4:Password>
+        </ns4:Contacts>
+        <ns4:DisabilityMonitoring>
+          <ns4:DisabilityType>OTHER</ns4:DisabilityType>
+        </ns4:DisabilityMonitoring>
+        <ns4:NoFixedAbode>false</ns4:NoFixedAbode>
+        <ns4:Address>
+          <ns4:AddressLine1>102 Petty France</ns4:AddressLine1>
+          <ns4:City>London</ns4:City>
+          <ns4:Country>GBR</ns4:Country>
+          <ns4:PostalCode>SW1H 9AJ</ns4:PostalCode>
+        </ns4:Address>
+        <ns4:EthnicMonitoring>0</ns4:EthnicMonitoring>
+      </ns2:Client>
+    </ns2:ClientAddRQ>
+  </soap:Body>
+</soap:Envelope>
