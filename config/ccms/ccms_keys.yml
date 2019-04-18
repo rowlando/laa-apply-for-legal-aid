@@ -3931,7 +3931,7 @@ proceeding:
     :response_type: text
     :user_defined: true
   PROCEEDING_NAME:
-    :value: "#proceeding_name"
+    :value: "#proceeding_ccms_code"
     :br100_meaning: the proceeding's code
     :response_type: text
     :user_defined: true
@@ -4218,7 +4218,7 @@ proceeding_merits:
     :response_type: boolean
     :user_defined: true
   PROCEEDING_NAME:
-    :value: '#proceeding_name'
+    :value: '#proceeding_ccms_code'
     :br100_meaning: the proceeding's code
     :response_type: text
     :user_defined: true
