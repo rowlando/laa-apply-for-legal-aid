@@ -93,7 +93,6 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
-  gem 'chromedriver-helper'
   gem 'climate_control' # Allows environment variables to be modified within specs
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
@@ -104,6 +103,7 @@ group :test do
   gem 'simplecov-rcov'
   gem 'timecop'
   gem 'vcr'
+  gem 'webdrivers', '~> 3.0'
   gem 'webmock'
 end
 
