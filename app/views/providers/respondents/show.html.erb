@@ -23,10 +23,14 @@
         )
       end
 
+
+
       questions.each do |question|
         question.show_details_when = nil if question.attribute == :bail_conditions_set
       end
     %>
+
+    <%= debug questions %>
 
     <%= render partial: 'respondent_detail', collection: questions, as: :question, locals: { form: form } %>
 
