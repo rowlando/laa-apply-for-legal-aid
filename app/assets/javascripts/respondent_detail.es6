@@ -1,20 +1,17 @@
 $(function () {
-  let bailConditionsDetailsLabel = "label[for='bail_conditions_set_details']";
-
-  if ($("#bail_conditions_set").length) { 
-    let bailConditions = "input[type=radio][name='respondent[bail_conditions_set]']";
+  if ($("#bail_conditions_set").length) {
     $(bailConditions).on("change", function () {
-      respondentDetail(bailConditions);
+      bailConditions();
     });
   };
 });
 
-function respondentDetail(optionName) {
-  let optionChecked = optionName + ':checked';
-  let radioButtonValue = $(optionChecked).val();
+function bailConditions() {
+  let optionChecked = "input[type = radio][name = 'respondent[bail_conditions_set]']:checked";
+  let optionValue = $(optionChecked).val();
   let bailConditionsLabel = "label[for='bail_conditions_set_details']";
 
-  if (radioButtonValue != 'true') {
+  if (optionValue != 'true') {
     $(bailConditionsLabel).text($('#bail_conditions_set_details').attr('data-bail-conditions-no'));
   } else {
     $(bailConditionsLabel).text($('#bail_conditions_set_details').attr('data-bail-conditions-yes'));
