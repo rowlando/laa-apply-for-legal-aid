@@ -231,7 +231,6 @@ en:
               blank: Tell us why the police have not been notified
             bail_conditions_set_details:
               blank: Give details of the bail conditions
-              no_bail_conditions_set: Tell us why bail conditions have not been set
         savings_amount:
           attributes:
             cash:

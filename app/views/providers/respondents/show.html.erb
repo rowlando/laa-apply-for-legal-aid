@@ -19,12 +19,19 @@
           title: t(".#{attr}"),
           attribute: attr,
           attribute_details: "#{attr}_details".to_sym,
-          show_details_when: 'false'
+          show_details_when: 'false',
+          options: nil
         )
       end
 
       questions.each do |question|
-        question.show_details_when = nil if question.attribute == :bail_conditions_set
+        if question.attribute == :bail_conditions_set 
+          question.show_details_when = nil
+
+          question.options = {
+            "data-bail-conditions-no" => t('.bail_conditions_set_no')
+          }
+        end
       end
     %>
 
