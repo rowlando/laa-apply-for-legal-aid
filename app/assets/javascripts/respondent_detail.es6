@@ -13,9 +13,10 @@ function respondentDetail(optionName) {
   let optionChecked = optionName + ':checked';
   let radioButtonValue = $(optionChecked).val();
   let bailConditionsLabel = "label[for='bail_conditions_set_details']";
+
   if (radioButtonValue != 'true') {
     $(bailConditionsLabel).text($('#bail_conditions_set_details').attr('data-bail-conditions-no'));
   } else {
-    $(bailConditionsLabel).text("Give details of the bail conditions, including the date they're likely to end");
+    $(bailConditionsLabel).text($('#bail_conditions_set_details').attr('data-bail-conditions-yes'));
   }
 }

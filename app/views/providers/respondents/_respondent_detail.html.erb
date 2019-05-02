@@ -1,8 +1,7 @@
 <%
  conditional_id = "#{question.attribute}_conditional"
  has_error = form.errors[question.attribute].any? || form.errors[question.attribute_details].any?
- data_attr = "data-bail-conditions-no"
- data_attr_value = question.options.nil? ? nil : question.options["data-bail-conditions-no"]
+ 
 %>
 <div class="govuk-form-group <%= has_error ? 'govuk-form-group--error' : '' %>">
   <div id="<%= question.attribute %>" class="govuk-radios govuk-radios--conditional" data-module="radios">
@@ -16,7 +15,16 @@
 
     <% always_showing = question.show_details_when.nil? %>
     <%= content_tag(:div, id: conditional_id, class: always_showing ? nil : 'govuk-radios__conditional--hidden') do %>
-      <%= form.govuk_text_area question.attribute_details, id: question.attribute_details, rows: 5, data_attr => data_attr_value %>
+      <%  if question.attribute == :bail_conditions_set %>
+        <%= form.govuk_text_area question.attribute_details,
+            id: question.attribute_details,
+            rows: 5,
+            'data-bail-conditions-yes'=> bail_conditions_titles['yes'],
+            'data-bail-conditions-no'=> bail_conditions_titles['no']
+        %>
+      <% else %>
+        <%= form.govuk_text_area question.attribute_details, id: question.attribute_details, rows: 5 %>
+      <% end %>
     <% end %>
   </div>
 </div>
